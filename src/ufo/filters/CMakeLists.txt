@@ -20,6 +20,8 @@ set ( filters_files
       BlackList.h
       DifferenceCheck.cc
       DifferenceCheck.h
+      PracticalBoundsCheck.cc
+      PracticalBoundsCheck.h
       FilterBase.cc
       FilterBase.h
       getScalarOrFilterData.cc

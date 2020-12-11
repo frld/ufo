@@ -22,6 +22,7 @@
 #include "ufo/filters/ObsDomainCheck.h"
 #include "ufo/filters/ObsDomainErrCheck.h"
 #include "ufo/filters/PoissonDiskThinning.h"
+#include "ufo/filters/PracticalBoundsCheck.h"
 #include "ufo/filters/PreQC.h"
 #include "ufo/filters/ProfileConsistencyChecks.h"
 #include "ufo/filters/QCmanager.h"
@@ -49,6 +50,8 @@ template<typename MODEL> void instantiateObsFilterFactory() {
            backgroundCheckMaker("Background Check");
   static oops::FilterMaker<MODEL, oops::ObsFilter<MODEL, ufo::DifferenceCheck> >
            differenceCheckMaker("Difference Check");
+  static oops::FilterMaker<MODEL, oops::ObsFilter<MODEL, ufo::PracticalBoundsCheck> >
+           practicalBoundsCheckMaker("Practical Bounds Check");
   static oops::FilterMaker<MODEL, oops::ObsFilter<MODEL, ufo::ROobserror> >
            ROobserrorMaker("ROobserror");
   static oops::FilterMaker<MODEL, oops::ObsFilter<MODEL, ufo::Thinning> >
